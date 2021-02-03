@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import {connect} from 'react-redux';
 import HomePage from './pages/homepage/homepage';
@@ -11,6 +10,7 @@ import {auth, createUserProfileDocument } from './firebase/firebase.util';
 import {setCurrentUser} from './redux/user/user.actions';
 import {selectCurrentUser} from './redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
+import {GlobalStyle} from './global.style';
 
 
 
@@ -44,6 +44,7 @@ componentWillUnmount() {
     return (
       <div>
       <BrowserRouter>
+      <GlobalStyle/>
       <Header />
       <Switch>
       <Route exact path='/' component={HomePage} />
